@@ -1,0 +1,126 @@
+.slider-list {
+    overflow: hidden;
+  }
+  
+  .slider-track {
+    white-space: nowrap;
+    transform: translateX(0%);
+    transition: 1.5s all;
+  }
+  
+  .slider-slide {
+    display: inline-block;
+    width: 100%;
+  }
+  
+  .slider-slide div {
+    height: 200px;
+    background: aqua;
+    border: 1px solid black;
+  }
+  
+  .slider-dot button {
+    pointer-events: none;
+  }
+
+  .slider-list {
+    max-width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .slider-arrows {
+    max-width: 600px;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+  }
+
+  .arrow {
+    margin: 100px;
+  }
+
+  .slider-dots {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0;
+    display: flex;
+    list-style-type: none;
+  }
+
+  .slider-dot button {
+    margin: 3px;
+  }
+
+  .switch {
+    position: absolute;
+    display: inline-block;
+    width: 30px;
+    height: 20px;
+    left: 50%;
+    top: 75%;
+    transform: translate(-50%, -50%);
+  }
+
+  .switch input {display:none;}
+
+  .sliderswitch {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .sliderswitch:before {
+    position: absolute;
+    content: "";
+    height: 10px;
+    width: 10px;
+    left: 4px;
+    bottom: 5px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .checkbox:checked + .sliderswitch {
+    background-color: #2196F3;
+  }
+  
+  .checkbox:focus + .sliderswitch {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  .checkbox:checked + .sliderswitch:before {
+    -webkit-transform: translateX(11px);
+    -ms-transform: translateX(11px);
+    transform: translateX(11px);
+  }
+  
+  .sliderswitch.round {
+    border-radius: 34px;
+  }
+  
+  .sliderswitch.round:before {
+    border-radius: 50%;
+  }
+
+  .text {
+    position: absolute;
+    top: -100%;
+    left: -50%;
+  }
