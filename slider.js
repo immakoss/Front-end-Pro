@@ -120,7 +120,7 @@ class Slider {
 
     switcher.addEventListener('click', () => {
       let some = setInterval(() => {
-        console.log('click')
+        this.nextSlide()
         if(!switcher.checked) {
           clearInterval(some)
         } 
@@ -143,7 +143,7 @@ class Slider {
 
     if(Math.abs(this.state.currentSlide) === slidesCount - 1 && this.settings.loop) {
       this.state.currentSlide = 1;
-    } else return;
+    }
 
     this.state.currentSlide -= 1;
 
@@ -156,7 +156,7 @@ class Slider {
 
     if(this.state.currentSlide === 0 && this.settings.loop){
       this.state.currentSlide -= slidesCount
-    } else return;
+    }
 
     this.state.currentSlide += 1;
 
