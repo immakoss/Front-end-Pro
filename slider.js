@@ -109,8 +109,22 @@ class Slider {
         next: slider.querySelector('.arrow-next'),
         prev: slider.querySelector('.arrow-prev'),
         dots: slider.querySelector('.slider-dots'),
-        switch: slider.querySelector('.switch')
+        switcher: slider.querySelector('.checkbox')
       }
+    })
+  }
+
+  
+  autoplayOn(){
+    const switcher = this.state.elements.switcher;
+
+    switcher.addEventListener('click', () => {
+      let some = setInterval(() => {
+        console.log('click')
+        if(!switcher.checked) {
+          clearInterval(some)
+        } 
+      },2000)
     })
   }
 
@@ -129,13 +143,11 @@ class Slider {
 
     if(Math.abs(this.state.currentSlide) === slidesCount - 1 && this.settings.loop) {
       this.state.currentSlide = 1;
-    };
+    } else return;
 
     this.state.currentSlide -= 1;
 
     track.style.transform = `translateX(${this.state.currentSlide * 100}%)`;
-
-    
   }
 
   prevSlide() {
@@ -144,7 +156,7 @@ class Slider {
 
     if(this.state.currentSlide === 0 && this.settings.loop){
       this.state.currentSlide -= slidesCount
-    };
+    } else return;
 
     this.state.currentSlide += 1;
 
@@ -172,6 +184,7 @@ class Slider {
     this.render();
     this.arrowsEvents();
     this.dotsEvents();
+    this.autoplayOn()
   }
 }
 
