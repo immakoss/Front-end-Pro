@@ -1,15 +1,12 @@
 let square = document.querySelector('.square');
-
-function squarePath(){
-    square.style.transform = "translateX(1px)"
-}
-
+let endPoint = document.documentElement.clientWidth - 100;
 
 square.addEventListener('click', function(){
-    let viewWidth = document.documentElement.clientHeight - 100;
-    if(a){
-        squarePath()
-    } else {
-        clearInterval()
-    }
+    let timer = setInterval(function(){
+        if(Number(square.style.left) === endPoint){
+            clearInterval(timer)
+        } else {
+            square.style.left += 1 + 'px'
+        }
+    },50)
 })
