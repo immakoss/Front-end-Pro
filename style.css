@@ -5,7 +5,7 @@
 }
 label {
     display: block;
-
+    padding: 5px;
 }
 
 form {
@@ -29,8 +29,10 @@ option {
     border: 1px solid black;
     border-radius: 5px;
     background-color: rgb(197, 197, 235);
-
-
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 25px;
 }
 
 #bodytext {
@@ -67,11 +69,29 @@ option {
     max-width: 500px;
 }
 
-.nousers span {
+.nousers {
     font-size: 20px;
 }
 
 
-.red {
-    background-color: rgb(196, 24, 24);
+.error {
+    border: 3px solid red!important;
+    
+}
+
+.card {
+    width: 400px;
+    height: 200px;
+    border-radius: 10px;
+    background-color:rgb(105, 105, 169);
+    border: 3px solid gray;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-size: 20px;
+}
+
+.card span {
+    padding: 5px;
+    display: block;
 }
