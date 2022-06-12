@@ -20,10 +20,9 @@ userInfo.addEventListener('keyup', (e)=>{
     data.body = e.target.value
 })
 
-// userId.addEventListener('blur', (e)=>{
-//     if(data.userId === '')
-//     data.userId = e.target.value
-// })
+userId.addEventListener('blur', (e)=>{
+    data.userId = e.target.value
+})
 
 submitBtn.addEventListener('click', (e)=>{
     e.preventDefault()
@@ -57,13 +56,9 @@ submitBtn.addEventListener('click', (e)=>{
   .then((json) => {
     let cards = document.createElement('div')
     cards.innerHTML = renderCards(json)
-    if(title.value === '' || userInfo.value === '') {
-      return;
-    } else {
       userCards.appendChild(cards)
       noUsers.innerHTML = 'Users:';
       console.log(json)
-    }
   });
 })
 
