@@ -5,25 +5,6 @@ let submitBtn = document.getElementById('submit')
 let userCards = document.querySelector('.usercards');
 let noUsers = document.querySelector('.nousers')
 
-let data = {
-    userId: '',
-    title: '',
-    body: ''
-}
-
-title.addEventListener('keyup', (e)=>{
-  data.title = e.target.value
-
-})
-
-userInfo.addEventListener('keyup', (e)=>{
-    data.body = e.target.value
-})
-
-userId.addEventListener('blur', (e)=>{
-    data.userId = e.target.value
-})
-
 submitBtn.addEventListener('click', (e)=>{
     e.preventDefault()
 
@@ -44,9 +25,9 @@ submitBtn.addEventListener('click', (e)=>{
     fetch('https://jsonplaceholder.typicode.com/posts', {
   method: 'POST',
   body: JSON.stringify({
-    title: data.title,
-    body: data.body,
-    userId: data.userId,
+    title: title.value,
+    body: userInfo.value,
+    userId: userId.value,
   }),
   headers: {
     'Content-type': 'application/json; charset=UTF-8',
@@ -56,9 +37,9 @@ submitBtn.addEventListener('click', (e)=>{
   .then((json) => {
     let cards = document.createElement('div')
     cards.innerHTML = renderCards(json)
-      userCards.appendChild(cards)
-      noUsers.innerHTML = 'Users:';
-      console.log(json)
+    userCards.appendChild(cards)
+    noUsers.innerHTML = 'Users:';
+    console.log(json)
   });
 })
 
